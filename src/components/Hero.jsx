@@ -5,7 +5,7 @@ import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className={`relative w-full h-screen mx-auto bg-[#FED8B1]`}>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -15,12 +15,12 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
+          <h1 className={`${styles.heroHeadText} text-[#191970]`}>
+            Hi, we are <span className='text-[#0000FF]'>SimoNik</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+          <p className={`${styles.heroSubText} mt-2 text-[#191970] -100 `}>
+            Put the things<br className='sm:block hidden' />
+            that we develop here.
           </p>
         </div>
       </div>
