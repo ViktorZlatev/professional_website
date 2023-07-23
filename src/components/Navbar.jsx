@@ -13,7 +13,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
+      if (scrollTop < 670) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+        scrolled ? "bg-[#FBD5AB]" : "bg-[#F0FFF0]"
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -42,7 +42,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <img src={logo} alt='logo' className='w-10 h-10 object-contain' />
           <p className='text-[#191970] text-[18px] font-bold cursor-pointer flex '>
             SimoNik &nbsp;
             
@@ -54,7 +54,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
+                active === nav.title ? "text-[#0000CD]" : "text-[#191970]"
               } hover:text-[#191970] text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
