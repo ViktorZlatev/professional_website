@@ -42,19 +42,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Developer",
+    title: "Safety",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Quality",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Creativity",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Experience",
     icon: creator,
   },
 ];
@@ -120,7 +120,6 @@ const experiences = [
     company_name: "Starbucks",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -133,7 +132,6 @@ const experiences = [
     company_name: "Tesla",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -146,7 +144,6 @@ const experiences = [
     company_name: "Shopify",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -159,7 +156,6 @@ const experiences = [
     company_name: "Meta",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -198,7 +194,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Project 1",
+    name: "denta house",
     description:
       "Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     tags: [
@@ -208,10 +204,10 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://www.facebook.com/dentahouse.bg",
   },
   {
-    name: "Project 2",
+    name: "Opticlasa",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
     tags: [
@@ -225,7 +221,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Project 3",
+    name: "Showroom Asics",
     description:
       "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable",
     tags: [

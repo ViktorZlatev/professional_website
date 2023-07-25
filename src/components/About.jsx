@@ -45,13 +45,14 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-[#000000] text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-[#000000] text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Welcome to SimoNik, a renowned name in the construction industry
+        known for craftsmanship and superior project management. With a passion
+        for transforming visions into reality, we specialize in constructing exceptional
+        residential and commercial spaces. Our team of highly skilled professionals brings 
+        creativity,technical expertise, and attention to detail to every project, 
+        ensuring outstanding results that align with our clients' needs and aspirations.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
