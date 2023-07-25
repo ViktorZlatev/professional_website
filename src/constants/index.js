@@ -168,7 +168,7 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text standard dummy ",
+      "Working with SimoNik was a breeze! Their attention to detail, and timely execution exceeded our expectations!",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
@@ -176,7 +176,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "There are many variations of passages of Lorem Ipsum available those interested",
+      "SimoNik transformed our clinic into a modern, functional workplace thanks to their innovative design solutions",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -184,7 +184,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for",
+      "From the very beggining to project completion, SimoNik displayed a level of professionalism that made us confident in their abilities.",
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
@@ -196,7 +196,7 @@ const projects = [
   {
     name: "denta house",
     description:
-      "Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "one of our biggest projects namely the dental clinic Denta house done with great taste and style as always",
     tags: [
       {
         name: "test",
@@ -209,7 +209,7 @@ const projects = [
   {
     name: "Opticlasa",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
+      "The new Opticlasa center has opened its doors and we are proud to say that the shop is one of our regular customers!",
     tags: [
       {
         name: "test",
@@ -223,7 +223,7 @@ const projects = [
   {
     name: "Showroom Asics",
     description:
-      "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable",
+      "Тhe famous asics showroom, made very fashionably and modern looking, by the skilled team of SimoNik",
     tags: [
       {
         name: "test",
