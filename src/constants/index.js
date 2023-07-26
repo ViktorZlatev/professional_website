@@ -32,7 +32,7 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Team",
   },
   {
     id: "contact",
@@ -116,27 +116,25 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Vlado",
+    company_name: "Manager",
     icon: starbucks,
     iconBg: "#383E56",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Collaborating with architects, engineers, and subcontractors to create project schedules, set milestones, and ensure that work progresses efficiently.",
+      "Ensuring the quality of construction work and adhering to safety standards are critical responsibilities for Vlado.They implement quality control measures to monitor workmanship and construction processes. ",
+      "Vlado plays a vital role in maintaining strong relationships with clients. He communicates with clients regularly, addresses their concerns, and keeps them updated on project progress. ",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Ivo",
+    company_name: "Interior designer",
     icon: tesla,
     iconBg: "#E6DEDD",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "He analyzes the available space and creates efficient floor plans that optimizes the use of space while considering the client's needs and preferences. ",
+      "Collaborates with various professionals, including architects, contractors, and vendors, to bring the design to life.Works closely with these stakeholders to ensure that the design is executed as planned.",
+      "Selects appropriate materials, furniture and decor items for the project. Ivo considers factors such as durability, sustainability, and budget constraints.",
     ],
   },
   {
@@ -157,8 +155,8 @@ const experiences = [
     icon: meta,
     iconBg: "#E6DEDD",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Project Planning and Execution: Collaborating with architects, engineers, and subcontractors to create project schedules, set milestones, and ensure that work progresses efficiently.",
+      "Quality Control and Safety Compliance: Ensuring the quality of construction work and adhering to safety standards are critical responsibilities.They implement quality control measures to monitor workmanship and construction processes. ",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
@@ -199,7 +197,7 @@ const projects = [
       "one of our biggest projects namely the dental clinic Denta house done with great taste and style as always",
     tags: [
       {
-        name: "test",
+        name: "dentahouse",
         color: "pink-text-gradient",
       },
     ],
@@ -212,13 +210,13 @@ const projects = [
       "The new Opticlasa center has opened its doors and we are proud to say that the shop is one of our regular customers!",
     tags: [
       {
-        name: "test",
+        name: "opticlasa",
         color: "blue-text-gradient",
       },
 
     ],
     image: jobit,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://www.facebook.com/opticlasa",
   },
   {
     name: "Showroom Asics",
@@ -226,12 +224,12 @@ const projects = [
       "Тhe famous asics showroom, made very fashionably and modern looking, by the skilled team of SimoNik",
     tags: [
       {
-        name: "test",
+        name: "asics",
         color: "green-text-gradient",
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://www.facebook.com/asicsbul",
   },
 ];
 
