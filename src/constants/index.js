@@ -117,7 +117,7 @@ const technologies = [
 const experiences = [
   {
     title: "Vlado",
-    company_name: "Manager",
+    company_name: "Manager and owner of SimoNik OOD",
     icon: starbucks,
     iconBg: "#383E56",
     points: [
@@ -128,37 +128,24 @@ const experiences = [
   },
   {
     title: "Ivo",
-    company_name: "Interior designer",
+    company_name: "construction field supervisor",
     icon: tesla,
     iconBg: "#E6DEDD",
     points: [
-      "He analyzes the available space and creates efficient floor plans that optimizes the use of space while considering the client's needs and preferences. ",
-      "Collaborates with various professionals, including architects, contractors, and vendors, to bring the design to life.Works closely with these stakeholders to ensure that the design is executed as planned.",
-      "Selects appropriate materials, furniture and decor items for the project. Ivo considers factors such as durability, sustainability, and budget constraints.",
+      "Managing all on-site construction activities. This includes supervising and coordinating the work of construction crews, subcontractors, and suppliers to ensure that tasks are completed efficiently.",
+      "He must inspect the construction site regularly to identify any potential issues or defects and take appropriate actions to maintain the highest standards of workmanship and safety.",
+      "Effective communication is essential in construction projects. The field supervisor must liaise with project managers, engineers, and other stakeholders to provide regular updates on the progress of the project , and report on site activities.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "Ani",
+    company_name: "Interior designer",
     icon: shopify,
     iconBg: "#383E56",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    points: [
-      "Project Planning and Execution: Collaborating with architects, engineers, and subcontractors to create project schedules, set milestones, and ensure that work progresses efficiently.",
-      "Quality Control and Safety Compliance: Ensuring the quality of construction work and adhering to safety standards are critical responsibilities.They implement quality control measures to monitor workmanship and construction processes. ",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "She analyzes the available space and creates efficient floor plans that optimizes the use of space while considering the client's needs and preferences. ",
+      "Collaborates with various professionals, including architects, contractors, and vendors, to bring the design to life.Works closely with these stakeholders to ensure that the design is executed as planned.",
+      "Selects appropriate materials, furniture and decor items for the project. Ani considers factors such as durability, sustainability, and budget constraints.",
     ],
   },
 ];

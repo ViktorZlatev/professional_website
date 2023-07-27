@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+
+import { construction } from "../assets";
+
 
 const Hero = () => {
   return (
@@ -25,7 +27,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+    <div className="flex justify-center items-center ">
+    <img
+      src={construction}
+      alt="pic"
+      className=" position:absolute w-[150vh] h-[42vh] mt-80 object-contain"
+    />
+    </div>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
@@ -41,7 +49,7 @@ const Hero = () => {
               }}
               className='w-3 h-3 rounded-full bg-secondary mb-1'
             />
-          </div>
+          </div> 
         </a>
       </div>
     </section>
