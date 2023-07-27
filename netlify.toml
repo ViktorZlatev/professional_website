@@ -1,0 +1,3 @@
+[build]
+  command = "npm --legacy-peer-deps run build"
+  publish = "dist"
