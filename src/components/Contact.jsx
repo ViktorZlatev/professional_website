@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -16,6 +17,8 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+
+  const [capVal, setCapVal] = useState();
 
   const handleChange = (e) => {
     const { target } = e;
@@ -66,7 +69,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-5 overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
@@ -78,7 +81,7 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='mt-12 flex flex-col gap-8'
+          className='mt-12 flex flex-col gap-5'
         >
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Name</span>
@@ -103,7 +106,7 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+            <span className='text-white font-medium mb-3'>Your Message</span>
             <textarea
               rows={7}
               name='message'
@@ -114,9 +117,15 @@ const Contact = () => {
             />
           </label>
 
+          <ReCAPTCHA
+         sitekey="6Ld0dW0nAAAAACgGaGLwpnsQ-rIwDLjL01vfTbzq"
+         onChange={(val) => setCapVal(val)}          
+         />
+
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='bg-tertiary py-3 px-6 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            disabled={!capVal}
           >
             {loading ? "Sending..." : "Send"}
           </button>

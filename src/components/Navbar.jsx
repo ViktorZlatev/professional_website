@@ -23,7 +23,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []);  
 
   return (
     <nav
@@ -47,7 +47,9 @@ const Navbar = () => {
             SimoNik &nbsp;
             
           </p>
-        </Link>
+        </Link> 
+
+      
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (
