@@ -118,7 +118,7 @@ const Contact = () => {
           </label>
 
           <ReCAPTCHA
-         sitekey="6Ld0dW0nAAAAACgGaGLwpnsQ-rIwDLjL01vfTbzq"
+         sitekey="6LfsiW0nAAAAAJQOFvy5agf6IwzPGzAqhjrcic0R"
          onChange={(val) => setCapVal(val)}          
          />
 
