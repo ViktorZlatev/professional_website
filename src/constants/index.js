@@ -156,7 +156,7 @@ const testimonials = [
       "Working with SimoNik was a breeze! Their attention to detail, and timely execution exceeded our expectations!",
     name: "Sara Lee",
     designation: "CFO",
-    company: "Acme Co",
+    company: "Opticlasa",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
@@ -164,7 +164,7 @@ const testimonials = [
       "SimoNik transformed our clinic into a modern, functional workplace thanks to their innovative design solutions",
     name: "Chris Brown",
     designation: "COO",
-    company: "DEF Corp",
+    company: "dentahouse",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
@@ -172,7 +172,7 @@ const testimonials = [
       "From the very beggining to project completion, SimoNik displayed a level of professionalism that made us confident in their abilities.",
     name: "Lisa Wang",
     designation: "CTO",
-    company: "456 Enterprises",
+    company: "Asics",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
