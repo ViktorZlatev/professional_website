@@ -75,8 +75,8 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className='text-[#F8F6F0] font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Contact</h3>
+        
+        <h3 className='text-[#F8F6F0] font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Връзка с нас</h3>
 
         <form
           ref={formRef}
@@ -84,43 +84,24 @@ const Contact = () => {
           className='mt-12 flex flex-col gap-5'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
-            <input
-              type='text'
-              name='name'
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
-            <input
-              type='email'
-              name='email'
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your email address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-3'>Your Message</span>
-            <textarea
-              rows={7}
-              name='message'
-              value={form.message}
-              onChange={handleChange}
-              placeholder='What you want to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
+          <span className='text-white text-[3vh] font-medium mb-4'>Тел: 088 039 0385</span>
           </label>
 
-          <ReCAPTCHA
-         sitekey="6LfsiW0nAAAAAJQOFvy5agf6IwzPGzAqhjrcic0R"
-         onChange={(val) => setCapVal(val)}          
-         />
+          <label className='flex flex-col'>
+            <span className='text-white text-[3vh] font-medium mb-4'>Емейл: office@simonik.bg </span>
+          </label>
+
+          <label className='flex flex-col'>
+            <span className='text-white text-[3vh] font-medium mb-3'>facebook: https://www.facebook.com/simonikproject</span>
+          </label>
+
+          <label className='flex flex-col'>
+            <span className='text-white text-[3vh] font-medium mb-3'>instagram: https://www.instagram.com/simonikproject</span>
+          </label>
+
+          <label className='flex flex-col'>
+            <span className='text-white text-[3vh] font-medium mb-3'>адрес...</span>
+          </label>
 
           <button
             type='submit'

@@ -71,20 +71,18 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>Our work</p>
-        <h2 className={`${styles.sectionHeadText} `}>Projects.</h2>
+        <p className={`${styles.sectionSubText} `}>Нашата пабота</p>
+        <h2 className={`${styles.sectionHeadText} `}>Проекти</h2>
       </motion.div>
 
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-[#000000] text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-[#000000] text-[19px] max-w-3xl leading-[30px]'
         >
-          We are presenting you some examples of our work. 
-          Each project is briefly described and contains
-          links were you are able to get a full perspective
-          of what we do. These projects reflect our abilities
-          like creativity, effectivness, experience and many more. 
+          Представяме ви няколко примера за нашата работа. Всеки проект е описан накратко и съдържа връзки, 
+          за да можете да получите пълна представа за това, което правим. Тези проекти отразяват 
+          нашите способности като креативност, ефективност, опит и много други.
         </motion.p>
       </div>
 

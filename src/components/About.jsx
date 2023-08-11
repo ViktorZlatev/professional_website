@@ -39,20 +39,15 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={styles.sectionSubText}>Въведение</p>
+        <h2 className={styles.sectionHeadText}>Преглед</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-[#000000] text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-[#000000] text-[19px] max-w-3xl leading-[30px]'
       >
-        Welcome to SimoNik, a renowned name in the construction industry
-        known for craftsmanship and superior project management. With a passion
-        for transforming visions into reality, we specialize in constructing exceptional
-        residential and commercial spaces. Our team of highly skilled professionals brings 
-        creativity,technical expertise, and attention to detail to every project, 
-        ensuring outstanding results that align with our clients' needs and aspirations.
+        Добре дошли в СимоНик, известно име в строителната индустрия, известно с майсторството и превъзходното управление на проекти. Със страст към превръщането на визиите в реалност, ние сме специализирани в изграждането на изключителни жилищни и търговски пространства. Нашият екип от висококвалифицирани професионалисти внася креативност, техническа експертиза и внимание към детайла към всеки проект, осигурявайки изключителни резултати, които са в съответствие с нуждите и стремежите на нашите клиенти.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
