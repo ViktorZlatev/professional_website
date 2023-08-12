@@ -7,6 +7,8 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { github } from "../assets";
+import { instagram } from "../assets";
 
 const Contact = () => {
   const formRef = useRef();
@@ -91,12 +93,14 @@ const Contact = () => {
             <span className='text-white text-[3vh] font-medium mb-4'>Емейл: office@simonik.bg </span>
           </label>
 
-          <label className='flex flex-col'>
-            <span className='text-white text-[3vh] font-medium mb-3'>facebook: https://www.facebook.com/simonikproject</span>
-          </label>
+          <label className='flex flex-row'>
 
-          <label className='flex flex-col'>
-            <span className='text-white text-[3vh] font-medium mb-3'>instagram: https://www.instagram.com/simonikproject</span>
+          <span className='text-white text-[3vh] font-medium mb-3' onClick={() => window.open('https://www.facebook.com/simonikproject', "_blank")}><img src={github} alt='facebook' className='w-2/3 h-2/3 object-contain '/>
+          </span>
+
+          <span className='text-white text-[3vh] font-medium mb-3' onClick={() => window.open('https://www.instagram.com/viki_zlatev', "_blank")}><img src={instagram} alt='instagram' className='w-2/3 h-2/3 object-contain '/>
+          </span>
+            
           </label>
 
           <label className='flex flex-col'>
