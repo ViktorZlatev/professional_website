@@ -9,6 +9,7 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { github } from "../assets";
 import { instagram } from "../assets";
+import { maps } from "../assets";
 
 const Contact = () => {
   const formRef = useRef();
@@ -90,30 +91,29 @@ const Contact = () => {
           </label>
 
           <label className='flex flex-col'>
-            <span className='text-white text-[3vh] font-medium mb-4'>Емейл: office@simonik.bg </span>
+            <span className='text-white text-[3vh] font-medium mb-7'>Емейл: office@simonik.bg </span>
           </label>
 
           <label className='flex flex-row'>
 
-          <span className='text-white text-[3vh] font-medium mb-3' onClick={() => window.open('https://www.facebook.com/simonikproject', "_blank")}><img src={github} alt='facebook' className='w-2/3 h-2/3 object-contain '/>
+              <span className='text-white text-[2.5vh] font-medium  mb-3'  onClick={() => window.open('https://www.google.com/maps/place/%D0%A1%D0%B8%D0%BC%D0%BE%D0%BD%D0%B8%D0%BA+%D0%9E%D0%9E%D0%94/@42.6623795,23.2806494,17.53z/data=!4m6!3m5!1s0x40aa85ac534071e9:0x61cb77425e141c92!8m2!3d42.6622199!4d23.2813269!16s%2Fg%2F11h4mrt54x?entry=ttu', "_blank")}><img src={maps} alt='maps' className='w-2/3 h-2/3 object-contain mt-0 '/></span>
+
+              <span className='text-white text-[3vh] font-medium  mr-20 mt-3'>Адрес:"Борис Димовски 12"</span>
+    
+              </label>
+          
+
+          <label className='flex flex-row'>
+
+          <span className='text-white text-[2.5vh] font-medium  ml-10 ' onClick={() => window.open('https://www.facebook.com/simonikproject', "_blank")}><img src={github} alt='facebook' className='w-2/3 h-2/3 object-contain '/>
           </span>
 
-          <span className='text-white text-[3vh] font-medium mb-3' onClick={() => window.open('https://www.instagram.com/viki_zlatev', "_blank")}><img src={instagram} alt='instagram' className='w-2/3 h-2/3 object-contain '/>
+          <span className='text-white text-[2.5vh] font-medium  ml-20' onClick={() => window.open('https://www.instagram.com/viki_zlatev', "_blank")}><img src={instagram} alt='instagram' className='w-2/3 h-2/3 object-contain '/>
           </span>
             
           </label>
 
-          <label className='flex flex-col'>
-            <span className='text-white text-[3vh] font-medium mb-3'>адрес...</span>
-          </label>
-
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-6 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-            disabled={!capVal}
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+          
         </form>
       </motion.div>
 
