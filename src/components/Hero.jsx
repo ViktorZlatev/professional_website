@@ -7,7 +7,7 @@ import { construction } from "../assets";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto bg-[#FFFFF0]`}>
+    <section className={`relative w-full h-screen mx-auto bg-[#AAF0D1]`}>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
