@@ -7,7 +7,7 @@ import { construction } from "../assets";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto bg-[#AAF0D1]`}>
+    <section className={`relative w-full h-screen mx-auto`}>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -20,7 +20,7 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-[#368BC1]`}>
             Ние сме <span className='text-[#0000FF]'>СимоНик</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-[#191970] -100 `}>
+          <p className={`${styles.heroSubText} mt-2 -100 `}>
           Building a better world,<br className='sm:block hidden' />
              one brick at a time.
           </p>

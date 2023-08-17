@@ -30,7 +30,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-[#7FFFD4]" : "bg-[#98FF98]"
+        scrolled ? "bg-[#FFFAFA]" : "bg-[#FFFFF0]"
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -56,7 +56,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-[#0000CD]" : "text-[#191970]"
+                active === nav.title ? "text-[#A0D6BA]" : "text-[#0000CD]"
               } hover:text-[#191970] text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
