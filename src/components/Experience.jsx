@@ -59,14 +59,14 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div>
         <p className={`${styles.sectionSubText} text-center`}>
           Кои сме ние
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
           Нашият екип
         </h2>
-      </motion.div>
+      </div>
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>

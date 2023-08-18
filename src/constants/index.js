@@ -154,6 +154,39 @@ const experiences = [
       "Избира подходящи материали, мебели и декоративни елементи за проекта. Ани взема под внимание фактори като издръжливост, устойчивост и ограничения на бюджета.",
     ],
   },
+  {
+    title: "Test1",
+    company_name: "Ex",
+    icon: shopify,
+    iconBg: "#383E56",
+    points: [
+      "Тя анализира наличното пространство и създава ефективни планове на етажите, които оптимизират използването на пространството, като се вземат предвид нуждите и предпочитанията на клиента.",
+      "Сътрудничи с различни професионалисти, включително архитекти, изпълнители и доставчици, за да осъществи дизайна. Тя тясно работи с тези страни, за да се гарантира, че дизайнът се изпълнява по план.",
+      "Избира подходящи материали, мебели и декоративни елементи за проекта. Ани взема под внимание фактори като издръжливост, устойчивост и ограничения на бюджета.",
+    ],
+  },
+  {
+    title: "Test2",
+    company_name: "Ex2",
+    icon: shopify,
+    iconBg: "#383E56",
+    points: [
+      "Тя анализира наличното пространство и създава ефективни планове на етажите, които оптимизират използването на пространството, като се вземат предвид нуждите и предпочитанията на клиента.",
+      "Сътрудничи с различни професионалисти, включително архитекти, изпълнители и доставчици, за да осъществи дизайна. Тя тясно работи с тези страни, за да се гарантира, че дизайнът се изпълнява по план.",
+      "Избира подходящи материали, мебели и декоративни елементи за проекта. Ани взема под внимание фактори като издръжливост, устойчивост и ограничения на бюджета.",
+    ],
+  },
+  {
+    title: "Test3",
+    company_name: "Ex3",
+    icon: shopify,
+    iconBg: "#383E56",
+    points: [
+      "Тя анализира наличното пространство и създава ефективни планове на етажите, които оптимизират използването на пространството, като се вземат предвид нуждите и предпочитанията на клиента.",
+      "Сътрудничи с различни професионалисти, включително архитекти, изпълнители и доставчици, за да осъществи дизайна. Тя тясно работи с тези страни, за да се гарантира, че дизайнът се изпълнява по план.",
+      "Избира подходящи материали, мебели и декоративни елементи за проекта. Ани взема под внимание фактори като издръжливост, устойчивост и ограничения на бюджета.",
+    ],
+  },
 ];
 
 const testimonials = [
@@ -223,6 +256,46 @@ const projects = [
     image: tripguide,
     source_code_link: "https://www.facebook.com/asicsbul",
   },
+  {
+    name: "Test1",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
+    tags: [
+      {
+        name: "test",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: carrent,
+    source_code_link: "https://www.facebook.com/dentahouse.bg",
+  },
+  {
+    name: "Test2",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
+    tags: [
+      {
+        name: "test",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: carrent,
+    source_code_link: "https://www.facebook.com/dentahouse.bg",
+  },
+  {
+    name: "Test3",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
+    tags: [
+      {
+        name: "test",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: carrent,
+    source_code_link: "https://www.facebook.com/dentahouse.bg",
+  },
+  
 ];
 
 export { services, technologies, experiences, testimonials, projects };
