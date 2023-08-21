@@ -25,6 +25,7 @@ import {
   threejs,
 } from "../assets"
 
+
 export const navLinks = [
   {
     id: "about",
@@ -228,7 +229,6 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://www.facebook.com/dentahouse.bg",
   },
   {
     name: "Opticlasa",
@@ -241,7 +241,6 @@ const projects = [
       },
     ],
     image: jobit,
-    source_code_link: "https://www.facebook.com/opticlasa",
   },
   {
     name: "Showroom Asics",
@@ -254,7 +253,6 @@ const projects = [
       },
     ],
     image: tripguide,
-    source_code_link: "https://www.facebook.com/asicsbul",
   },
   {
     name: "Test1",
@@ -267,7 +265,6 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://www.facebook.com/dentahouse.bg",
   },
   {
     name: "Test2",
@@ -280,7 +277,6 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://www.facebook.com/dentahouse.bg",
   },
   {
     name: "Test3",
@@ -293,7 +289,6 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://www.facebook.com/dentahouse.bg",
   },
   
 ];
