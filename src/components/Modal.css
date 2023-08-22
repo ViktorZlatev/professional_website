@@ -31,10 +31,7 @@ body.active-modal {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
 }
 
-.btn-modal:hover {
-  background-color: #d7e4de; /* Lighter green on hover */
-  color: white; /* White text on hover */
-}
+
 
 
 .modal, .overlay {

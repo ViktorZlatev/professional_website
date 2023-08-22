@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Modal.css";
+import {construction} from "../assets";
+import {tripguide} from "../assets";
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
@@ -25,14 +27,16 @@ export default function Modal() {
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
             <h2>Hello Modal</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              perferendis suscipit officia recusandae, eveniet quaerat assumenda
-              id fugit, dignissimos maxime non natus placeat illo iusto!
-              Sapiente dolorum id maiores dolores? Illum pariatur possimus
-              quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
-              placeat tempora vitae enim incidunt porro fuga ea.
-            </p>
+            <img
+            src={construction}
+            alt='test'
+            className='w-full h-full object-cover'
+          />
+          <img
+            src={tripguide}
+            alt='test'
+            className='w-full h-full object-cover'
+          />
             <button className="close-modal" onClick={toggleModal}>
               CLOSE
             </button>
