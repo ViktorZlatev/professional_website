@@ -3,7 +3,7 @@ body.active-modal {
 }
 
 .btn-modal {
-  padding: 10px 20px;
+  padding: 1px 5px;
   display: block;
   position:fixed;
   margin: -420px auto 0;
@@ -31,8 +31,13 @@ body.active-modal {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
 }
 
+h2{
+  color:#0000FF;
+}
 
-
+hr{
+  border-top: 1px solid black ;
+}
 
 .modal, .overlay {
   width: 100vw;
@@ -53,12 +58,12 @@ body.active-modal {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #af1c1c;
+  background: #d0edca;
   padding: 14px 28px;
-  border-radius: 3px;
-  max-width: 600px;
-  min-width: 300px;
-  z-index: 104; /* Higher z-index to ensure the modal is on top */
+  border-radius: 6px;
+  max-width: 75%;
+  min-width: 520px;
+  z-index: 150; /* Higher z-index to ensure the modal is on top */
 }
 
 .close-modal {
