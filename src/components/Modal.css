@@ -17,7 +17,7 @@ body.active-modal {
 }
 
 h2{
-  color:#0000FF;
+  color:transparent;
 }
 
 hr{
@@ -30,7 +30,7 @@ hr{
   top: 0;
   left: 0;
   position: fixed;
-  z-index: 100;
+  z-index: 200;
 }
 
 .overlay {
@@ -43,7 +43,6 @@ hr{
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #d0edca;
   padding: 14px 28px;
   border-radius: 6px;
   max-width: 75%;
@@ -51,10 +50,20 @@ hr{
   z-index: 200; /* Higher z-index to ensure the modal is on top */
 }
 
+
 .close-modal {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 35px;
   padding: 5px 7px;
   z-index: 102; /* Make sure the close button is above the modal content */
+  background-color: #df8e8e; /* Very light red color */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  
+&:hover {
+    background-color: #ffd0d0; /* Lighter shade on hover */
+  }
 }

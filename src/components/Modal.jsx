@@ -25,9 +25,9 @@ export default function Modal() {
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
-            <h2>Hello Modal</h2>
-
+          <div className="modal-content bg-tertiary">
+            <h2>Тя анализира наличното пространство и създава ефективни планове на етажите, е</h2>
+ 
         <label className='flex flex-col'>
           <label className='flex flex-row'>  
             <img

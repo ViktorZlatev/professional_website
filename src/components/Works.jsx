@@ -33,8 +33,8 @@ const ProjectCard = ({
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-            style={{ zIndex: 80 }}
+            className='w-full h-full object-cover rounded-2xl z-20'
+            
           />
 
            
