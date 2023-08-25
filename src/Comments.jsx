@@ -1,3 +1,4 @@
+// Comments.jsx
 import React, { useState, useEffect } from 'react';
 import './Comments.css';
 
@@ -6,31 +7,33 @@ function Comments() {
   const [newComment, setNewComment] = useState('');
 
   useEffect(() => {
-    const storedComments = JSON.parse(sessionStorage.getItem('comments')) || [];
-    setComments(storedComments);
+    fetch('http://localhost:3001/comments')
+      .then(response => response.json())
+      .then(data => setComments(data))
+      .catch(error => console.error('Error fetching comments:', error));
   }, []);
-
-  useEffect(() => {
-    sessionStorage.setItem('comments', JSON.stringify(comments));
-  }, [comments]);
 
   const handleAddComment = () => {
     if (newComment.trim() !== '') {
-      const newComments = [...comments, { text: newComment }];
-      setComments(newComments);
+      const newCommentObj = { text: newComment };
+      fetch('http://localhost:3001/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newCommentObj)
+      })
+        .then(response => response.json())
+        .then(data => setComments([...comments, data]))
+        .catch(error => console.error('Error adding comment:', error));
       setNewComment('');
     }
   };
 
-  const handleDeleteComment = (index) => {
-    const newComments = comments.filter((_, i) => i !== index);
-    setComments(newComments);
-  };
-
-  const handleCommentChange = (index, newText) => {
-    const newComments = [...comments];
-    newComments[index].text = newText;
-    setComments(newComments);
+  const handleDeleteComment = (id) => {
+    fetch(`http://localhost:3001/comments/${id}`, {
+      method: 'DELETE'
+    })
+      .then(() => setComments(comments.filter(comment => comment.id !== id)))
+      .catch(error => console.error('Error deleting comment:', error));
   };
 
   return (
@@ -48,10 +51,13 @@ function Comments() {
         </button>
       </div>
       <div className="comment-list">
-        {comments.map((comment, index) => (
-          <div key={index} className="comment">
+        {comments.map(comment => (
+          <div key={comment.id} className="comment">
             <p className="comment-text">{comment.text}</p>
-            <button className="delete-comment-btn" onClick={() => handleDeleteComment(index)}>
+            <button
+              className="delete-comment-btn"
+              onClick={() => handleDeleteComment(comment.id)}
+            >
               Delete
             </button>
           </div>
@@ -62,4 +68,3 @@ function Comments() {
 }
 
 export default Comments;
-
