@@ -6,7 +6,20 @@
       "author": "typicode"
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "text": "hii",
+      "id": 2
+    },
+    {
+      "text": "hello",
+      "id": 3
+    },
+    {
+      "text": "gg",
+      "id": 4
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

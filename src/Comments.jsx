@@ -7,7 +7,7 @@ function Comments() {
   const [newComment, setNewComment] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001/comments')
+    fetch('https://myjsonserver-sa4i.onrender.com/comments')
       .then(response => response.json())
       .then(data => setComments(data))
       .catch(error => console.error('Error fetching comments:', error));
@@ -16,7 +16,7 @@ function Comments() {
   const handleAddComment = () => {
     if (newComment.trim() !== '') {
       const newCommentObj = { text: newComment };
-      fetch('http://localhost:3001/comments', {
+      fetch('https://myjsonserver-sa4i.onrender.com/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newCommentObj)
@@ -29,7 +29,7 @@ function Comments() {
   };
 
   const handleDeleteComment = (id) => {
-    fetch(`http://localhost:3001/comments/${id}`, {
+    fetch(`https://myjsonserver-sa4i.onrender.com/comments/${id}`, {
       method: 'DELETE'
     })
       .then(() => setComments(comments.filter(comment => comment.id !== id)))
