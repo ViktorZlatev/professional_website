@@ -12,9 +12,9 @@
 }
 
 .new-comment {
-  width: 50%; /* Adjusted width for smaller input */
-  padding: 10px;
-  font-size: 16px;
+  width: 50%;
+  padding: 15px; /* Adjusted padding */
+  font-size: 18px; /* Adjusted font size */
   border: none;
   border-radius: 20px;
   background-color: #090d33;
@@ -22,8 +22,8 @@
 }
 
 .add-comment-btn {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 24px; /* Adjusted padding */
+  font-size: 18px; /* Adjusted font size */
   background-color: #27ae60;
   color: white;
   border: none;
@@ -45,7 +45,7 @@
 
 .comment {
   display: flex;
-  flex-direction: column; /* Adjusted to stack comments and replies */
+  flex-direction: column;
   align-items: flex-start;
   margin: 10px 0;
   padding: 15px;
@@ -59,7 +59,7 @@
 }
 
 .comment-text {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
   margin-bottom: 10px;
 }
@@ -68,7 +68,7 @@
   background: none;
   border: none;
   color: #27ae60;
-  font-size: 14px;
+  font-size: 16px; /* Adjusted font size */
   cursor: pointer;
 }
 
@@ -82,8 +82,8 @@
 
 .reply-input textarea {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
+  padding: 15px; /* Adjusted padding */
+  font-size: 18px; /* Adjusted font size */
   border: none;
   border-radius: 20px;
   background-color: #090d33;
@@ -92,8 +92,8 @@
 }
 
 .reply-input button {
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 12px 24px; /* Adjusted padding */
+  font-size: 16px; /* Adjusted font size */
   background-color: #27ae60;
   color: white;
   border: none;
@@ -108,11 +108,17 @@
 
 .reply-list {
   margin-top: 10px;
+  margin-left:7%;
+  margin-bottom: 15px;
 }
 
 .reply-text {
-  font-size: 15.5px; /* Adjust font size for replies */
+  font-size: 18px;
   margin: 5px 0;
-  margin-left:5%;
-  color:grey;
+  margin-left: 15%;
+  color: #ece4c9;
+  display:table-row; /* Display each reply on a new line */
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

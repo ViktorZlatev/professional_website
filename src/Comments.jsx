@@ -5,8 +5,9 @@ import { styles } from "./styles";
 function Comments() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-  const [replyId, setReplyId] = useState(null); // Store the comment ID for replying
-  const [replies, setReplies] = useState({}); // Store replies for each comment
+  const [newReply, setNewReply] = useState(''); // State for reply input
+  const [replyId, setReplyId] = useState(null);
+  const [replies, setReplies] = useState({});
 
   useEffect(() => {
     fetch('https://backendserver-q6ws.onrender.com/comments')
@@ -17,7 +18,6 @@ function Comments() {
     fetch('https://backendserver-q6ws.onrender.com/replies')
       .then(response => response.json())
       .then(data => {
-        // Group replies by comment ID
         const replyObj = data.reduce((acc, reply) => {
           if (!acc[reply.commentId]) {
             acc[reply.commentId] = [];
@@ -50,8 +50,8 @@ function Comments() {
   };
 
   const handleAddReply = (commentId) => {
-    if (newComment.trim() !== '') {
-      const newReplyObj = { text: newComment, commentId };
+    if (newReply.trim() !== '') { // Use newReply for reply input
+      const newReplyObj = { text: newReply, commentId };
       fetch('https://backendserver-q6ws.onrender.com/replies', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,11 +65,11 @@ function Comments() {
           });
         })
         .catch(error => console.error('Error adding reply:', error));
-      setNewComment('');
-      setReplyId(null); // Clear replyId after adding reply
+      setNewReply(''); // Clear newReply after adding reply
+      setReplyId(null);
     }
   };
-
+  
   return (
     <div className="app">
       <h1 className={`${styles.sectionHeadText} mt-4 text-[#368BC1]`}>
@@ -111,8 +111,8 @@ function Comments() {
                   <textarea
                     className="new-comment"
                     placeholder="Write a reply..."
-                    value={newComment}
-                    onChange={(e) => setNewComment(e.target.value)}
+                    value={newReply}
+                    onChange={(e) => setNewReply(e.target.value)} 
                   />
                   <div className="reply-actions">
                     <button className="add-comment-btn" onClick={() => handleAddReply(comment.id)}>
