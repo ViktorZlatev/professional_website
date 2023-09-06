@@ -1,7 +1,19 @@
+/* Add these CSS rules */
+.modal {
+  top: 0%;
+  left: 0%;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+/* Keep the rest of your CSS unchanged */
 body.active-modal {
   overflow-y: hidden;
 }
-
 
 .btn-modal {
   padding: 10px 20px;
@@ -9,32 +21,19 @@ body.active-modal {
   position: fixed;
   margin: -290px auto 0;
   font-size: 120px;
-  margin-left:280px;
-  color:transparent;
+  margin-left: 280px;
+  color: transparent;
   z-index: 105;
   border-radius: 5px;
-  background-color:transparent; /* Very light green background */
+  background-color: transparent;
 }
 
-h2{
-  color:transparent;
+h2 {
+  color: transparent;
 }
 
-hr{
-  border-top: 1px solid black ;
-}
-
-.modal, .overlay {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index: 200;
-}
-
-.overlay {
-  background: transparent;
+hr {
+  border-top: 1px solid black;
 }
 
 .modal-content {
@@ -48,8 +47,9 @@ hr{
   max-width: 75%;
   min-width: 520px;
   z-index: 200; /* Higher z-index to ensure the modal is on top */
+  background-color: white; /* Set a white background for the modal content */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
-
 
 .close-modal {
   position: absolute;
@@ -62,8 +62,8 @@ hr{
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  
-&:hover {
+
+  &:hover {
     background-color: #ffd0d0; /* Lighter shade on hover */
   }
 }

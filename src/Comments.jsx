@@ -5,35 +5,34 @@ import { styles } from "./styles";
 function Comments() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-  const [newReply, setNewReply] = useState(''); // State for reply input
+  const [newReply, setNewReply] = useState('');
   const [replyId, setReplyId] = useState(null);
   const [replies, setReplies] = useState({});
 
   useEffect(() => {
-    fetch('https://backendserver-q6ws.onrender.com/comments')
+    fetch('http://localhost:3001/comments') // Replace with your MongoDB comments endpoint
       .then(response => response.json())
       .then(data => setComments(data))
       .catch(error => console.error('Error fetching comments:', error));
-      
-    fetch('https://backendserver-q6ws.onrender.com/replies')
-      .then(response => response.json())
-      .then(data => {
-        const replyObj = data.reduce((acc, reply) => {
-          if (!acc[reply.commentId]) {
-            acc[reply.commentId] = [];
-          }
-          acc[reply.commentId].push(reply);
-          return acc;
-        }, {});
-        setReplies(replyObj);
-      })
-      .catch(error => console.error('Error fetching replies:', error));
+
+    // Fetch replies for each comment
+    comments.forEach(comment => {
+      fetch(`http://localhost:3001/comments/${comment._id}/replies`) // Replace with your MongoDB replies endpoint
+        .then(response => response.json())
+        .then(data => {
+          setReplies({
+            ...replies,
+            [comment._id]: data
+          });
+        })
+        .catch(error => console.error('Error fetching replies:', error));
+    });
   }, []);
 
   const handleAddComment = () => {
     if (newComment.trim() !== '') {
       const newCommentObj = { text: newComment };
-      fetch('https://backendserver-q6ws.onrender.com/comments', {
+      fetch('http://localhost:3001/comments', { // Replace with your MongoDB comments endpoint
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newCommentObj)
@@ -50,9 +49,9 @@ function Comments() {
   };
 
   const handleAddReply = (commentId) => {
-    if (newReply.trim() !== '') { // Use newReply for reply input
-      const newReplyObj = { text: newReply, commentId };
-      fetch('https://backendserver-q6ws.onrender.com/replies', {
+    if (newReply.trim() !== '') {
+      const newReplyObj = { text: newReply };
+      fetch(`http://localhost:3001/comments/${commentId}/replies`, { // Replace with your MongoDB replies endpoint
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newReplyObj)
@@ -61,15 +60,15 @@ function Comments() {
         .then(data => {
           setReplies({
             ...replies,
-            [commentId]: replies[commentId] ? [...replies[commentId], data] : [data]
+            [commentId]: [...replies[commentId], data]
           });
         })
         .catch(error => console.error('Error adding reply:', error));
-      setNewReply(''); // Clear newReply after adding reply
+      setNewReply('');
       setReplyId(null);
     }
   };
-  
+
   return (
     <div className="app">
       <h1 className={`${styles.sectionHeadText} mt-4 text-[#368BC1]`}>
@@ -88,10 +87,10 @@ function Comments() {
       </div>
       <div className="comment-list">
         {comments.map(comment => (
-          <div key={comment.id} className="comment">
+          <div key={comment._id} className="comment">
             <div className="comment-text">{comment.text}</div>
             <div className="reply-list">
-              {replies[comment.id]?.map((reply, index) => (
+              {replies[comment._id]?.map((reply, index) => (
                 <div key={index} className="reply-text">
                   {reply.text}
                 </div>
@@ -101,12 +100,12 @@ function Comments() {
               {!replyId && (
                 <button
                   className="reply-comment-btn"
-                  onClick={() => handleReplyComment(comment.id)}
+                  onClick={() => handleReplyComment(comment._id)}
                 >
                   Reply
                 </button>
               )}
-              {replyId === comment.id && (
+              {replyId === comment._id && (
                 <div className="reply-input">
                   <textarea
                     className="new-comment"
@@ -115,7 +114,7 @@ function Comments() {
                     onChange={(e) => setNewReply(e.target.value)} 
                   />
                   <div className="reply-actions">
-                    <button className="add-comment-btn" onClick={() => handleAddReply(comment.id)}>
+                    <button className="add-comment-btn" onClick={() => handleAddReply(comment._id)}>
                       Add Reply
                     </button>
                     <button className="cancel-reply-btn" onClick={() => setReplyId(null)}>
