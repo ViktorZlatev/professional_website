@@ -21,31 +21,25 @@ const ProjectCard = ({
   return (
 
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 1,
-          scale: 1,
-          speed: 1,
-        }}
+      <div
+
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
         <div className='relative w-full h-[230px]'>
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl z-20'
+            className='w-full h-full object-cover rounded-2xl'
             
           />
-
-           
           
           <div
-              className='transparent w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className='transparent w-10 h-10 rounded-full flex justify-center items-center cursor-pointer z-130'
             >
               <Modal />
             </div>
-          </div>
-        
+
+            </div>
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
@@ -62,7 +56,7 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
-      </Tilt>
+        </div>
     </motion.div>
   );
 };
@@ -74,6 +68,12 @@ const Works = () => {
         <p className={`${styles.sectionSubText} `}>Нашата пабота</p>
         <h2 className={`${styles.sectionHeadText} `}>Проекти</h2>
       </motion.div>
+
+      <div
+              className='transparent w-10 h-10 rounded-full flex justify-center items-center cursor-pointer z-130'
+            >
+              <Modal />
+            </div>
 
       <div className='w-full flex'>
         <motion.p
