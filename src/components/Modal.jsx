@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Modal.css";
 import {construction} from "../assets";
 import {tripguide} from "../assets";
+import { projects } from "../constants";
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
@@ -77,4 +78,5 @@ export default function Modal() {
       <p>.</p>
     </>
   );
-}
+ };
+

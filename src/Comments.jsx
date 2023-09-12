@@ -10,37 +10,53 @@ function Comments() {
   const [replies, setReplies] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:3001/comments') // Replace with your MongoDB comments endpoint
-      .then(response => response.json())
-      .then(data => setComments(data))
-      .catch(error => console.error('Error fetching comments:', error));
+    // Function to fetch comments and replies
+    const fetchCommentsAndReplies = async () => {
+      try {
+        // Fetch comments from your MongoDB comments endpoint
+        const commentsResponse = await fetch('http://localhost:3001/comments');
+        const commentsData = await commentsResponse.json();
+        setComments(commentsData);
 
-    // Fetch replies for each comment
-    comments.forEach(comment => {
-      fetch(`http://localhost:3001/comments/${comment._id}/replies`) // Replace with your MongoDB replies endpoint
-        .then(response => response.json())
-        .then(data => {
-          setReplies({
-            ...replies,
-            [comment._id]: data
-          });
-        })
-        .catch(error => console.error('Error fetching replies:', error));
-    });
+        // Fetch replies for each comment
+        const repliesPromises = commentsData.map(async (comment) => {
+          const repliesResponse = await fetch(`http://localhost:3001/comments/${comment._id}/replies`);
+          const repliesData = await repliesResponse.json();
+          return { commentId: comment._id, replies: repliesData };
+        });
+
+        // Wait for all replies to be fetched and update state
+        const fetchedReplies = await Promise.all(repliesPromises);
+        const repliesObj = fetchedReplies.reduce((acc, { commentId, replies }) => {
+          acc[commentId] = replies;
+          return acc;
+        }, {});
+        setReplies(repliesObj);
+      } catch (error) {
+        console.error('Error fetching comments and replies:', error);
+      }
+    };
+
+    // Call the fetch function to load comments and replies
+    fetchCommentsAndReplies();
   }, []);
 
-  const handleAddComment = () => {
+  const handleAddComment = async () => {
     if (newComment.trim() !== '') {
       const newCommentObj = { text: newComment };
-      fetch('http://localhost:3001/comments', { // Replace with your MongoDB comments endpoint
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newCommentObj)
-      })
-        .then(response => response.json())
-        .then(data => setComments([...comments, data]))
-        .catch(error => console.error('Error adding comment:', error));
-      setNewComment('');
+      try {
+        // Send a POST request to your MongoDB comments endpoint
+        const response = await fetch('http://localhost:3001/comments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newCommentObj)
+        });
+        const data = await response.json();
+        setComments([...comments, data]);
+        setNewComment('');
+      } catch (error) {
+        console.error('Error adding comment:', error);
+      }
     }
   };
 
@@ -48,24 +64,26 @@ function Comments() {
     setReplyId(id);
   };
 
-  const handleAddReply = (commentId) => {
+  const handleAddReply = async (commentId) => {
     if (newReply.trim() !== '') {
       const newReplyObj = { text: newReply };
-      fetch(`http://localhost:3001/comments/${commentId}/replies`, { // Replace with your MongoDB replies endpoint
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newReplyObj)
-      })
-        .then(response => response.json())
-        .then(data => {
-          setReplies({
-            ...replies,
-            [commentId]: [...replies[commentId], data]
-          });
-        })
-        .catch(error => console.error('Error adding reply:', error));
-      setNewReply('');
-      setReplyId(null);
+      try {
+        // Send a POST request to your MongoDB replies endpoint
+        const response = await fetch(`http://localhost:3001/comments/${commentId}/replies`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newReplyObj)
+        });
+        const data = await response.json();
+        setReplies({
+          ...replies,
+          [commentId]: [...replies[commentId], data]
+        });
+        setNewReply('');
+        setReplyId(null);
+      } catch (error) {
+        console.error('Error adding reply:', error);
+      }
     }
   };
 
