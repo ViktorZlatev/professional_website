@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { SectionWrapper } from "../hoc";
 import "./Modal.css";
+import Modal from "./Modal"
 
 const ProjectCard = ({
   index,
@@ -13,7 +15,6 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
-  openModal,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -31,12 +32,6 @@ const ProjectCard = ({
             alt='project_image'
             className='w-full h-full object-cover rounded-2xl'
           />
-          <div
-            className='transparent w-10 h-10 rounded-full flex justify-center items-center cursor-pointer z-130'
-            onClick={openModal}
-          >
-            Open
-          </div>
         </div>
 
         <div className='mt-5'>
@@ -46,9 +41,14 @@ const ProjectCard = ({
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
-            <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
+            <label
+              key={`${name}-${tag.name}`}
+              className={`text-[14px] ${tag.color}`}
+              aria-label={`Tag: ${tag.name}`} // Use aria-label for accessibility
+              htmlFor={`tag-${tag.name}`} // Corresponding input id
+            >
               #{tag.name}
-            </p>
+            </label>
           ))}
         </div>
       </Tilt>
@@ -56,64 +56,7 @@ const ProjectCard = ({
   );
 };
 
-const Modal = ({
-  index,
-  image_1,
-  image_2,
-  image_3,
-  image_4,
-  image_5,
-  image_6,
-  isOpen,
-  closeModal,
-}) => {
-  if (!isOpen) {
-    return null;
-  }
-
-  return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <div className='modal'>
-        <div onClick={closeModal} className='overlay'></div>
-        <div className='modal-content bg-tertiary'>
-          <h2>Тя анализира наличното пространство и създава ефективни планове на етажите, е</h2>
-
-          <label className='flex flex-col'>
-            <label className='flex flex-row'>
-              <img src={image_1} alt='test' className='w-1/2 h-1/2 object-cover' />
-              <img src={image_2} alt='test' className='w-1/2 h-1/2 object-cover' />
-            </label>
-
-            <label className='flex flex-row'>
-              <img src={image_3} alt='test' className='w-1/2 h-1/2 object-cover' />
-              <img src={image_4} alt='test' className='w-1/2 h-1/2 object-cover' />
-            </label>
-
-            <label className='flex flex-row'>
-              <img src={image_5} alt='test' className='w-1/2 h-1/2 object-cover' />
-              <img src={image_6} alt='test' className='w-1/2 h-1/2 object-cover' />
-            </label>
-          </label>
-
-          <button className='close-modal' onClick={closeModal}>
-            CLOSE
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 const Works = () => {
-  const [modalIndex, setModalIndex] = useState(null);
-
-  const openModal = (index) => {
-    setModalIndex(index);
-  };
-
-  const closeModal = () => {
-    setModalIndex(null);
-  };
 
   return (
     <>
@@ -134,6 +77,8 @@ const Works = () => {
         </motion.p>
       </div>
 
+        <Modal/>
+
       <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
           <ProjectCard
@@ -145,14 +90,6 @@ const Works = () => {
         ))}
       </div>
 
-      {modalIndex !== null && (
-        <Modal
-          index={modalIndex}
-          isOpen={modalIndex !== null}
-          closeModal={closeModal}
-          {...projects[modalIndex]}
-        />
-      )}
     </>
   );
 };
