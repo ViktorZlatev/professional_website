@@ -229,12 +229,7 @@ const projects = [
       },
     ],
     image: carrent,
-    image_1:{tripguide},
-    image_2:{tripguide},
-    image_3:{tripguide},
-    image_4:{tripguide},
-    image_5:{tripguide},
-    image_6:{tripguide},
+    images:[tripguide , tripguide , tripguide , tripguide , tripguide , carrent]
   },
   {
     name: "Opticlasa",
@@ -247,12 +242,7 @@ const projects = [
       },
     ],
     image: jobit,
-    image_1:{tripguide},
-    image_2:{tripguide},
-    image_3:{tripguide},
-    image_4:{tripguide},
-    image_5:{tripguide},
-    image_6:{tripguide},
+    images:[tripguide , tripguide , tripguide , tripguide , carrent , carrent]
   },
   {
     name: "Showroom Asics",
@@ -265,12 +255,7 @@ const projects = [
       },
     ],
     image: tripguide,
-    image_1:{tripguide},
-    image_2:{tripguide},
-    image_3:{tripguide},
-    image_4:{tripguide},
-    image_5:{tripguide},
-    image_6:{tripguide},
+    images:[tripguide , tripguide , carrent , tripguide , tripguide , carrent]
   },
   {
     name: "Test1",
@@ -283,12 +268,7 @@ const projects = [
       },
     ],
     image: carrent,
-    image_1:{tripguide},
-    image_2:{tripguide},
-    image_3:{tripguide},
-    image_4:{tripguide},
-    image_5:{tripguide},
-    image_6:{tripguide},
+    images:[carrent , tripguide , tripguide , tripguide , tripguide , tripguide]
   },
   {
     name: "Test2",
@@ -301,12 +281,7 @@ const projects = [
       },
     ],
     image: carrent,
-    image_1:{tripguide},
-    image_2:{tripguide},
-    image_3:{tripguide},
-    image_4:{tripguide},
-    image_5:{tripguide},
-    image_6:{tripguide},
+    images:[tripguide , tripguide , tripguide , carrent , tripguide , tripguide],
   },
   {
     name: "Test3",
@@ -319,12 +294,7 @@ const projects = [
       },
     ],
     image: carrent,
-    image_1:{tripguide},
-    image_2:{tripguide},
-    image_3:{tripguide},
-    image_4:{tripguide},
-    image_5:{tripguide},
-    image_6:{tripguide},
+    images:[tripguide , tripguide , tripguide , tripguide , tripguide , carrent],
   },
   
 ];
