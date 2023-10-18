@@ -7,6 +7,8 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import Modal from "./Modal"; // Import the Modal component
 import "./Modal.css";
+import RadoModal from "./RadoModal";
+import ViktorModal from "./ViktorNachinModal";
 
 const ProjectCard = ({
   index,
@@ -16,7 +18,18 @@ const ProjectCard = ({
   image,
   source_code_link,
   openModal,
+  changeViktorModal
 }) => {
+  const handleOpenModalClick = () => {
+    // Call the openModal function with the desired content or images
+    openModal(/* pass the content or images here */);
+  };
+
+  const handleChangeViktorModalClick = () => {
+    // Call the changeViktorModal function with the desired content
+    changeViktorModal("img"+index);
+  };
+
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -27,38 +40,32 @@ const ProjectCard = ({
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
-          />
-        </div>
-
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <label
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-              aria-label={`Tag: ${tag.name}`}
-              htmlFor={`tag-${tag.name}`}
-            >
-              #{tag.name}
-            </label>
-          ))}
-        </div>
-        <button onClick={openModal}>Open Modal</button> {/* Add this button */}
+        {/* ... other card content ... */}
+        <img src={image} />
+        <h2>{ name}</h2>
+        <p>{ description}</p>
+        <button onClick={handleChangeViktorModalClick}>Change Viktor Modal Content</button>
       </Tilt>
     </motion.div>
   );
 };
 
 const Works = () => {
+  const [showViktorModal,SetShowViktorModal] = React.useState(false)
+  const [ViktorModalInfo, setViktorModalInfo] = React.useState(null)
+  const ToggleOnViktorModal = () => {
+    SetShowViktorModal(true)
+  }
+  const changeViktorModal = (context) => {
+    setViktorModalInfo(context)
+    ToggleOnViktorModal()
+  }
+
+  const ToggleOffViktorModal = () => {
+    SetShowViktorModal(false)
+  }
+
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImages, setSelectedImages] = useState([]);
 
@@ -91,20 +98,26 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <Modal images={selectedImages} closeModal={closeModal} />
-      )}
+      )} */}
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      
+
+
+      <div className="mt-20 flex flex-col">
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-${index}`}
             index={index}
             openModal={() => openModal(project.images)}
+
+          changeViktorModal={changeViktorModal}
             {...project}
           />
         ))}
       </div>
+          <ViktorModal text={ViktorModalInfo} IsVisible={showViktorModal} CloseModal={ToggleOffViktorModal} />
     </>
   );
 };
