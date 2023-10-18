@@ -10,20 +10,23 @@ export default function ViktorModal(props) {
     <>
       {props.IsVisible && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center backdrop-blur-md">
-          <div className="p-8 bg-white rounded-lg shadow-xl">
-            <button onClick={props.CloseModal}>
-              <p className="text-red-400 text-2xl font-semibold">X</p>
+          <div className="p-4 bg-white rounded-lg shadow-md w-2/3 h-2/3 relative">
+            <button
+              onClick={props.CloseModal}
+              className="absolute top-2 right-9 text-red-400 text-xl font-semibold"
+            >
+              X
             </button>
-            <p className="text-red-800 text-2xl font-bold mt-4">
-              {props.text} hi2d
+            <p className="text-red-800 text-xl font-bold mt-2">
+              {props.text} hi2
             </p>
-            <div className="flex flex-row mt-4">
+            <div className="flex flex-wrap mt-2 gap-2">
               {props.text != null
                 ? ModalImages[parseInt(props.text) || 0].map((img, index) => (
-                    <div key={index} className="mx-4">
+                    <div key={index} style={{ flexBasis: "30%" }}>
                       <img
                         src={img}
-                        className="w-48 h-64 rounded-lg shadow-md"
+                        className="w-full h-auto rounded-lg shadow-md p-2"
                         alt={`Image ${index}`}
                       />
                     </div>

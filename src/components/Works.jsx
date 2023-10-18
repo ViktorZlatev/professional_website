@@ -22,7 +22,7 @@ const ProjectCard = ({
 }) => {
   const handleOpenModalClick = () => {
     // Call the openModal function with the desired content or images
-    openModal(/* pass the content or images here */);
+    openModal();
   };
 
   const handleChangeViktorModalClick = () => {
@@ -44,7 +44,7 @@ const ProjectCard = ({
         <img src={image} />
         <h2>{ name}</h2>
         <p>{ description}</p>
-        <button onClick={handleChangeViktorModalClick}>Change Viktor Modal Content</button>
+        <button onClick={handleChangeViktorModalClick} >Change Viktor Modal Content</button>
       </Tilt>
     </motion.div>
   );
@@ -98,26 +98,19 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* {isModalOpen && (
-        <Modal images={selectedImages} closeModal={closeModal} />
-      )} */}
-
-      
-
-
-      <div className="mt-20 flex flex-col">
+      <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard
-            key={`project-${index}`}
-            index={index}
-            openModal={() => openModal(project.images)}
-
-          changeViktorModal={changeViktorModal}
-            {...project}
-          />
+          <div key={`project-${index}`} style={{ flexBasis: "23%", padding: "-10px" }}>
+            <ProjectCard
+              index={index}
+              openModal={() => openModal(project.images)}
+              changeViktorModal={changeViktorModal}
+              {...project}
+            />
+          </div>
         ))}
       </div>
-          <ViktorModal text={ViktorModalInfo} IsVisible={showViktorModal} CloseModal={ToggleOffViktorModal} />
+      <ViktorModal text={ViktorModalInfo} IsVisible={showViktorModal} CloseModal={ToggleOffViktorModal} />
     </>
   );
 };

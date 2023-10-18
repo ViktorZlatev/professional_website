@@ -294,7 +294,7 @@ const projects = [
       },
     ],
     image: carrent,
-    images:[tripguide , tripguide , tripguide , tripguide , tripguide , carrent],
+    images:[tripguide , jobit , tripguide , tripguide , tripguide , carrent],
   },
   
 ];
