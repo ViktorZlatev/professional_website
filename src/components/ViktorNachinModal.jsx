@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 export default function ViktorModal(props) {
   let ModalImages = projects.map((project) => {
+    console.log(project.images)
+     // using only third index cuz otherwise it a a whole string in the form of img{number}
     return project.images;
   });
 
@@ -22,7 +24,7 @@ export default function ViktorModal(props) {
             </p>
             <div className="flex flex-wrap mt-2 gap-2">
               {props.text != null
-                ? ModalImages[parseInt(props.text) || 0].map((img, index) => (
+                ? ModalImages[parseInt(props.text[3] || 0)].map((img, index) => (
                     <div key={index} style={{ flexBasis: "30%" }}>
                       <img
                         src={img}
