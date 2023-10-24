@@ -221,14 +221,14 @@ const projects = [
   {
     name: "denta house",
     description:
-      "един от нашите най-големи проекти, а именно стоматологичната клиника Denta house, изработена със стил и вкус, както винаги",
+      "Eдин от нашите най-големи проекти,а именно денталната клиника Denta house, изработена със стил и вкус, както винаги",
     tags: [
       {
         name: "dentahouse",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: tripguide,
     images:[tripguide , tripguide , tripguide , tripguide , tripguide , carrent]
   },
   {
@@ -241,8 +241,8 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: jobit,
-    images:[tripguide , tripguide , tripguide , tripguide , carrent , carrent]
+    image: tripguide,
+    images:[jobit , tripguide , jobit , tripguide , carrent , carrent]
   },
   {
     name: "Showroom Asics",
@@ -268,7 +268,7 @@ const projects = [
       },
     ],
     image: carrent,
-    images:[carrent , tripguide , tripguide , tripguide , tripguide , tripguide]
+    images:[carrent , tripguide , jobit , tripguide , tripguide , tripguide]
   },
   {
     name: "Test2",
@@ -294,7 +294,7 @@ const projects = [
       },
     ],
     image: carrent,
-    images:[tripguide , jobit , tripguide , tripguide , tripguide , carrent],
+    images:[jobit , carrent , jobit , carrent , jobit , carrent],
   },
   
 ];

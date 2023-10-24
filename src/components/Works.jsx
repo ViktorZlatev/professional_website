@@ -42,9 +42,9 @@ const ProjectCard = ({
       >
         {/* ... other card content ... */}
         <img src={image} />
+        <button onClick={handleChangeViktorModalClick} style={{ margin:"5%", fontSize: "20px", backgroundColor:"#3EB489" , color: "white", padding: "15px 110px", borderRadius: "8px" }}>Open</button>
         <h2>{ name}</h2>
         <p>{ description}</p>
-        <button onClick={handleChangeViktorModalClick} >Change Viktor Modal Content</button>
       </Tilt>
     </motion.div>
   );
@@ -100,7 +100,7 @@ const Works = () => {
 
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <div key={`project-${index}`} style={{ flexBasis: "23%", padding: "-10px" }}>
+          <div key={`project-${index}`} index={index} {...project} style={{ flexBasis: "23%", padding: "-10px" }}>
             <ProjectCard
               index={index}
               openModal={() => openModal(project.images)}
